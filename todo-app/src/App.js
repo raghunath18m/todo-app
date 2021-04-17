@@ -36,7 +36,7 @@ function App() {
     <div className="App">
       <h1 className= "textStyle">MY TODO LIST</h1>
       <form>
-        <input placeholder="write your tasks here..." value = {input} onChange={event => setInput(event.target.value)}/>
+        <input onKeyPress={(e) => { e.key === 'Enter' && e.preventDefault(); }} placeholder="write your tasks here..." value = {input} onChange={event => setInput(event.target.value)}/>
         <Button variant="contained" color="primary" disabled={!input} onClick={addTodo}>Add Task</Button>
       </form>
       <ul>
